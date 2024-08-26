@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(f'{str}{str}{str}\n{str[0:8]}\n')
+print(f'{str}{str}{str}\n{str[0:8]}')
