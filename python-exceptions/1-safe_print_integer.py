@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    try:
-        for num in value:
-            try:
+    if isinstance(value, list) or isinstance(value, int):
+        try:
+            for num in value:
                 print("{:d}".format(num))
-            except ValueError:
-                return False
-    except TypeError:
-        return False
-    return True
+        except ValueError:
+            return False
+        except TypeError:
+            return False
+        return True
+    return False
