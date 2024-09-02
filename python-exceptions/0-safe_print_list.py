@@ -2,6 +2,7 @@
 def safe_print_list(my_list=[], x=0):
     printed = 0
     if x == 0:
+        print()
         return printed
     for item in my_list:
         try:
