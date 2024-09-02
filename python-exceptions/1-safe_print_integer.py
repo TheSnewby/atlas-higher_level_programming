@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    if isinstance(value, list) or isinstance(value, int):
+    if isinstance(value, int):
         try:
             for num in value:
                 print("{:d}".format(num))
@@ -12,4 +12,5 @@ def safe_print_integer(value):
             else:
                 return False
         return True
-    return False
+    else:
+        return False
