@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """Printing a square of a Square class"""
 
 
 class Square:
     """creates a Square class with options"""
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         if isinstance(size, int):
             if size >= 0:
                 self.__size = size
@@ -13,7 +12,8 @@ class Square:
                 raise ValueError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
-        if isinstance(position, tuple) and position[0] >= 0 and position[1] >= 0:
+        if (isinstance(position, tuple) and len(position) > 1
+                and position[0] >= 0 and position[1] >= 0):
             self.__position = position
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -42,14 +42,13 @@ class Square:
     def position(self):
         """returns position"""
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         if isinstance(value, tuple) and value[0] >= 0 and value[1] >= 0:
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
-
 
     def my_print(self):
         """prints the square with #s in stdout"""
