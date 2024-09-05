@@ -6,5 +6,3 @@ class Square:
     """
     This class creates a Square class with one attribute.
     """
-    def __init__(self, side):
-        self.side = side
