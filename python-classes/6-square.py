@@ -38,6 +38,19 @@ class Square:
         """returns area"""
         return self.__size ** 2
 
+    @property
+    def position(self):
+        """returns position"""
+        return self.__position
+    
+    @position.setter
+    def position(self, value):
+        if isinstance(value, tuple) and value[0] >= 0 and value[1] >= 0:
+            self.__position = value
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+
     def my_print(self):
         """prints the square with #s in stdout"""
         if self.__size == 0:
