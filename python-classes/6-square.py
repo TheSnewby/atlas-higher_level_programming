@@ -13,7 +13,8 @@ class Square:
         else:
             raise TypeError("size must be an integer")
         if (isinstance(position, tuple) and len(position) > 1
-                and isinstance(position[0], int) and isinstance(position[1], int)
+                and isinstance(position[0], int) and
+                isinstance(position[1], int)
                 and position[0] >= 0 and position[1] >= 0):
             self.__position = position
         else:
@@ -58,11 +59,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__size + self.__position[1]): #vertical
+            for i in range(self.__size + self.__position[1]):  # vertical
                 if i < self.__position[1]:
                     print()
                 else:
-                    for j in range(self.__size + self.__position[0]): #horizontal
+                    for j in range(self.__size + self.__position[0]):
                         if j < self.__position[0]:
                             print(' ', end='')
                         else:
