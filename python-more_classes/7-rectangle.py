@@ -23,7 +23,6 @@ class Rectangle:
         else:
             raise TypeError("height must be an integer")
         Rectangle.number_of_instances += 1
-        Rectangle.print_symbol = '#'
 
     @property
     def width(self):
@@ -87,4 +86,3 @@ class Rectangle:
     def __del__(self):
         print('Bye rectangle...')
         Rectangle.number_of_instances -= 1
-
