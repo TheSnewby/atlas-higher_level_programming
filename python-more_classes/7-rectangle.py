@@ -72,7 +72,7 @@ class Rectangle:
             string = ''
             for h in range(self.__height):
                 for w in range(self.__width):
-                    string += self.print_symbol
+                    string += str(self.print_symbol)
                 if h != self.__height - 1:
                     string += '\n'
             return string
@@ -81,7 +81,6 @@ class Rectangle:
 
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.__width, self.__height)
-
 
     def __del__(self):
         print('Bye rectangle...')
