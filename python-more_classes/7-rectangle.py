@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""How many instances of a Rectangle"""
+"""Change Representation of a Rectangle"""
 
 
 class Rectangle:
