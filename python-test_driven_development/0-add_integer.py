@@ -12,5 +12,4 @@ def add_integer(a, b=98):
         raise ValueError("a is too large")
     if (b + 1 == b):
         raise ValueError("b is too large")
-    
     return int(a) + int(b)
