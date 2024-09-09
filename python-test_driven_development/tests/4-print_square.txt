@@ -1,0 +1,28 @@
+4-print_square
+
+print_square = __import__('4-print_square').print_square
+
+
+    0) simple, basic case
+    print_square(2): #0
+    ##
+    ##
+
+    1) size must be an integer
+    >>> print_square(2.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    2) size must be an integer (float < 0)
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    3) size must be positive
+    >>> print_square(-2)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+    
