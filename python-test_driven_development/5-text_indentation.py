@@ -10,7 +10,7 @@ def text_indentation(text):
     else:
         new_string=''
         for i in range(len(text)):
-            if text[i] != '!' and text[i] != ':' and text[i] != '.':
+            if text[i] != '?' and text[i] != ':' and text[i] != '.':
                 if i == len(text) - 1:
                     new_string += text[i]
                     print(new_string.strip(), end='')
