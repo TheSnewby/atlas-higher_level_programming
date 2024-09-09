@@ -13,7 +13,7 @@ def text_indentation(text):
             if text[i] != '!' and text[i] != ':' and text[i] != '.':
                 if i == len(text) - 1:
                     new_string += text[i]
-                    print(new_string.strip())
+                    print(new_string.strip(), end='')
                 else:
                     new_string += text[i]
             else:
