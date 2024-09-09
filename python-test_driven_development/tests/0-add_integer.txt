@@ -17,3 +17,11 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+>>> add_integer(5e100, 5)
+Traceback (most recent call last):
+    ...
+ValueError: a is too large
+>>> add_integer(5, 5e100)
+Traceback (most recent call last):
+    ...
+ValueError: b is too large
