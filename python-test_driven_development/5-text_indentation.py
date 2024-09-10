@@ -8,7 +8,7 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     else:
-        new_string=''
+        new_string = ''
         for i in range(len(text)):
             if text[i] not in ['?', ':', '.']:
                 if i == len(text) - 1:
@@ -21,8 +21,3 @@ def text_indentation(text):
                 print(new_string.strip())
                 print()
                 new_string = ''
-# text_indentation('Holberton School')
-# print('--')
-# text_indentation('Holberton.School')
-# print('--')
-#text_indentation('Holberton. School? How are you: John')
