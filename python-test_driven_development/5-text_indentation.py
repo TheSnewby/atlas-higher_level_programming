@@ -10,10 +10,10 @@ def text_indentation(text):
     else:
         new_string=''
         for i in range(len(text)):
-            if text[i] != '?' and text[i] != ':' and text[i] != '.':
+            if text[i] not in ['?', ':', '.']:
                 if i == len(text) - 1:
                     new_string += text[i]
-                    print(new_string.strip(), end='')
+                    print(new_string.strip())
                 else:
                     new_string += text[i]
             else:
@@ -21,3 +21,8 @@ def text_indentation(text):
                 print(new_string.strip())
                 print()
                 new_string = ''
+# text_indentation('Holberton School')
+# print('--')
+# text_indentation('Holberton.School')
+
+#text_indentation('Holberton. School? How are you: John')
