@@ -18,3 +18,9 @@
 >>> a.append(-1)
 >>> a.print_sorted()
 [-1, 1]
+
+>>> a = MyList([2, 1])
+>>> a.print_sorted()
+[1, 2]
+>>> print(a)
+[2, 1]
