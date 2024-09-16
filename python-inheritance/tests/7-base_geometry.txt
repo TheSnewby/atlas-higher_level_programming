@@ -10,6 +10,8 @@
         ...
     ValueError: age must be greater than 0
 
+    >>> BaseGeometry().integer_validator("age", 1)
+
     >>> BaseGeometry().integer_validator("distance", -4)
     Traceback (most recent call last):
         ...
@@ -20,6 +22,7 @@
         ...
     Exception: area() is not implemented
 
+    ### The next three tests only work online. Locally, it requires an output starting with BaseGeometry.<the rest of the exception message>
     >>> BaseGeometry().integer_validator()
     Traceback (most recent call last):
         ...
