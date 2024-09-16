@@ -14,3 +14,48 @@
     Traceback (most recent call last):
         ...
     ValueError: distance must be greater than 0
+
+    >>> BaseGeometry().area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+    >>> BaseGeometry().integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> BaseGeometry().integer_validator('hello')
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+    >>> BaseGeometry().integer_validator(value=3)
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'name'
+
+    >>> BaseGeometry().integer_validator('hi', (4,))
+    Traceback (most recent call last):
+        ...
+    TypeError: hi must be an integer
+
+    >>> BaseGeometry().integer_validator('hi', [4])
+    Traceback (most recent call last):
+        ...
+    TypeError: hi must be an integer
+
+    >>> BaseGeometry().integer_validator('hi', True)
+    Traceback (most recent call last):
+        ...
+    TypeError: hi must be an integer
+
+    >>> BaseGeometry().integer_validator('hi', {3,4})
+    Traceback (most recent call last):
+        ...
+    TypeError: hi must be an integer
+
+    >>> BaseGeometry().integer_validator('hi', None)
+    Traceback (most recent call last):
+        ...
+    TypeError: hi must be an integer
