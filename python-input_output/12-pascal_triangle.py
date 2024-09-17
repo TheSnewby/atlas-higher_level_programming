@@ -17,6 +17,3 @@ def pascal_triangle(n):
             else:
                 p[r].append(p[r - 1][c - 1] + p[r - 1][c])
     return p
-result = pascal_triangle(5)
-for row in result:
-    print(row)
