@@ -16,4 +16,4 @@ def pascal_triangle(n):
                 p[r].append(1)
             else:
                 p[r].append(p[r - 1][c - 1] + p[r - 1][c])
-        print(p[r])
+    return p
