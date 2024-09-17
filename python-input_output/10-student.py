@@ -12,8 +12,10 @@ class Student:
     def to_json(self, attrs=None):
         if isinstance(attrs, list) and all(isinstance(item, str) 
                                            for item in attrs):
+            dict_dict = {}
             for key in attrs:
                 if key in self.__dict__:
-                    return self.__dict__[key]
+                    dict_dict[key] = self.__dict__[key]
+            return dict_dict
 
         return self.__dict__
