@@ -1,0 +1,68 @@
+![True Objectification][https://i.redd.it/4xn19gxyn6161.jpg]
+
+# Everything is an Object
+### By Stephen Newby
+
+## Introduction
+
+Programming languages, like written languages, have a large range of properties that sometimes overlap but often differ in design and execution. Some languages like C are procedural in that they focus on a sequential execution of code. Other languages like OCaml are functional in that they focus on using functions to conduct most actions and heavily use immutability to reduct issues. The most used languages of the past few decades like Python, however, are object oriented languages in that they use objects to build their codebase. OOP languages focus on utilizing classes to group objects and their methods, inheritence to make subtypes of objects that inherit aspects of their tree, polymorphism to allow multiple classes to use a method in their own ways, and ecapsulation to make choose what data is held private.
+
+## Id and Type
+Objects, like most data types, are stored in memory and are of a specific type. In C the memory location can be called by using the ampersand symbol next to a variable name, but in Python the main way is to use the *id* function.
+
+> `x = 5`
+> `id(x)`
+> 75395146
+
+In python everything is subclass of the object class, unlike C where each datatype is its own structure. To find the specific data type it is in Python then the *type* function is used.
+
+> `x = 5`
+> `type(x)`
+> <class 'int'>
+
+## Mutable Objects
+
+Mutability is the measure of how modifyable an object or variable is. In C mutability changes depending on context. In OCaml most data structures are held immutable. In Python there are several objects that can be modified after creation: sets, lists, and dictionaries. These can be modified in place. This can be showcased by showing that the id of the object doesn't change after being modified.
+
+> `x = [1, 2]`
+> `id(x)`
+> 12345678
+> `x.append(3)`
+> `id(x)`
+> 12345678
+
+## Immutable Objects
+
+Python has multiple objects that are immutable including strings, numbers, bools and tuples. These objects were designed to not be changeable in place by the designers of the language for a combination of performance, memory, security and ease of use. In other languages the list of immutable objects is not the same.
+
+`x = 1`
+> `id(x)`
+> 12345678
+> `x = 2`
+> `id(x)`
+> 87654321
+
+## Treatment of Objects per Mutability
+
+Python treats mutable and immutable objects differently. If an object is mutable like a list then it can be modified in place while maintaining the same memory location and not having to reallocate more memory every time there's a change. Conversely, an immutable object will always require using a new memory location. The nice part of this is that multiple objects can point to the same location in memory if its the same immutable location, which is great for performance, though, it also requires a deft hand at tracking what is immutable and what is not. Finally, immutable objects like numbers are foundational to the functioning of some mutable types like lists where an index is always the same index.
+
+> `c = 'a'`
+> `id(c)`
+> 12345678
+> `c = 'b'`
+> `id(c)`
+> 87654321
+
+## Effect from Mutability on Passed Arguments
+
+Passed arguments matter a great deal in Python like in C. In C a variable passed by pointer can be changed in place by function, but a variable not passed by a pointer will have no changes occur to the original variable by the function. Unlike in C, it depends in Python much more on whether it is mutable or not. Mutable objects can be changed in place anywhere and when passed in a function will change if the function changes it. Immutable objects have no change.
+
+> `c = 5`
+> `add_one_to_int(c)`
+> `print(c)`
+> 5
+
+> `c = [0]`
+> `add_one_element_to_list(c)`
+> `print(c)`
+> [0, 1]
