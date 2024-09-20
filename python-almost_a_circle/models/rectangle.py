@@ -6,6 +6,7 @@ from .base import Base
 class Rectangle(Base):
     """Rectangle defined from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initializer"""
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -85,9 +86,11 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
+        """Area"""
         return self.__height * self.__width
 
     def display(self):
+        """Display"""
         for i in range(self.__height + self.__y):
             for j in range(self.__width + self.__x):
                 if j >= self.__x and i >= self.__y:
@@ -97,11 +100,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """__str__"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
 
     def update(self, *args, **kwargs):
+        """Update"""
         if args:
             self.id = args[0]
             if len(args) >= 2:
@@ -114,17 +119,18 @@ class Rectangle(Base):
                 self.y = args[4]
         elif kwargs:
             for key, value in kwargs.items():
-                    if key == 'id':
-                        self.id = value
-                    elif key == 'height':
-                        self.height = value
-                    elif key == 'width':
-                        self.width = value
-                    elif key == 'x':
-                        self.x = value
-                    elif key == 'y':
-                        self.y = value
+                if key == 'id':
+                    self.id = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
 
     def to_dictionary(self):
-        return {'x' : self.x, 'y' : self.y, 'id' : self.id,
-                'height' : self.height, 'width' : self.width}
+        """Dictionary"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}

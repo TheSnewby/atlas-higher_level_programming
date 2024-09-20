@@ -30,7 +30,7 @@ class Base:
                 f.write(Base.to_json_string(list_objs))
 
     def from_json_string(json_string):
-        if json_string is None: # how to do if empty
+        if json_string is None:  # how to do if empty
             return []
         return json.loads(json_string)
 

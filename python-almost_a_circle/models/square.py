@@ -2,14 +2,17 @@
 """Square"""
 from .rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Defines a Square based off Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
+        """Initializer"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """__str__"""
         return '[Square] ({}) {}/{} - {}'.format(self.id, self.x,
-                                                       self.y, self.width)
+                                                 self.y, self.width)
 
     @property
     def size(self):
@@ -21,6 +24,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """update"""
         if args:
             self.id = args[0]
             if len(args) >= 2:
@@ -43,6 +47,6 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
-        return {'id' : self.id, 'x' : self.x,
-                'size' : self.height, 'y' : self.y}
-
+        """dictionary"""
+        return {'id': self.id, 'x': self.x,
+                'size': self.height, 'y': self.y}
