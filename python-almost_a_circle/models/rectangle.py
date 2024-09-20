@@ -6,7 +6,7 @@ from .base import Base
 class Rectangle(Base):
     """Rectangle defined from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializer"""
+        """Initializer for Rectangle Class"""
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -86,7 +86,7 @@ class Rectangle(Base):
             self.__y = value
 
     def area(self):
-        """Area"""
+        """Area of a Rectangle"""
         return self.__height * self.__width
 
     def display(self):
@@ -100,13 +100,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """__str__"""
+        """string replacment of __str__ for Rectangle"""
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
 
     def update(self, *args, **kwargs):
-        """Update"""
+        """Updater of Rectangle attributes"""
         if args:
             self.id = args[0]
             if len(args) >= 2:
@@ -131,6 +131,6 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        """Dictionary"""
+        """Converts Rectangle objects to a dictionary representation"""
         return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
