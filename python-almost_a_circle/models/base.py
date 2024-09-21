@@ -22,28 +22,30 @@ class Base:
             return '[]'
         return json.dumps(list_dictionaries)
 
+    @classmethod
     def save_to_file(cls, list_objs):
         """saves a list of dictionaries to a file"""
-        Rectangle = __import__('rectangle').Rectangle
-        if isinstance(cls, Rectangle):
-            with open('Rectangle.json', 'w') as f:
-                f.write(Base.to_json_string(list_objs))
-        else:
-            with open('Square.json', 'w') as f:
-                f.write(Base.to_json_string(list_objs))
+        filename = cls.__name__ + '.json'
+        list_dicts = []
+        for obj in list_objs:
+            list_dicts.append(obj.to_dictionary())
+        with open(filename, 'w') as f:
+            f.write(Base.to_json_string(list_dicts)) #consider converting to dictionaries prior
 
     def from_json_string(json_string):
         """unpacks a list of dictionaries from a json string"""
-        if json_string is None:  # how to do if empty
+        if json_string in (None, ''):  # how to do if empty
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """creates new class instance from **dictionary"""
         new_object = cls(1, 2)
         new_object.update(**dictionary)
         return new_object
 
+    @classmethod
     def load_from_file(cls):
         """returns a list of instances from a file"""
         if cls is None:
