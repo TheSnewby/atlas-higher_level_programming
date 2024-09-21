@@ -52,7 +52,8 @@ class Base:
         filename = cls.__name__ + '.json'
         try:
             with open(filename, 'r') as f:
-                loads = json.loads(f.read())
+                reading = f.read()
+                loads = Base.from_json_string(reading)
                 for dict in loads:
                     list_objs.append(cls.create(**dict))
         except FileNotFoundError:
