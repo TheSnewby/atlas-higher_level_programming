@@ -27,8 +27,10 @@ class Base:
         """saves a list of dictionaries to a file"""
         filename = cls.__name__ + '.json'
         list_dicts = []
-        for obj in list_objs:
-            list_dicts.append(obj.to_dictionary())
+        if list_objs:
+            for obj in list_objs:
+                if obj is not None:
+                    list_dicts.append(obj.to_dictionary())
         with open(filename, 'w') as f:
             f.write(Base.to_json_string(list_dicts)) #consider converting to dictionaries prior
 

@@ -86,10 +86,10 @@ class TestAlmostACircle(unittest.TestCase):
         self.assertEqual(create_dict.id, 1)
 
     def testCreateSquare(self):
-        squar_dict = Square(1, 2).to_dictionary()
+        squar_dict = Square(1).to_dictionary()
         create_dict = Square.create(**squar_dict)
         self.assertEqual(create_dict.width, 1)
-        self.assertEqual(create_dict.height, 2)
+        self.assertEqual(create_dict.height, 1)
         self.assertEqual(create_dict.id, 1)
 
     def testLoadFromFile(self):
