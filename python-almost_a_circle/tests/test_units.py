@@ -311,5 +311,25 @@ class TestAlmostACircle(unittest.TestCase):
         expected_result = '##\n##\n'
         self.assertEqual(capture.getvalue(), expected_result)
 
+    def testSquareSaveToFileDouble(self):
+        obj1 = Square(1, 3, 4)
+        obj2 = Square(5)
+        Square.save_to_file([obj1, obj2])
+        with open ("Square.json", 'r') as f:
+            reading = f.read()
+        self.assertIn('"size": 1', reading)
+
+    def testSquareSaveToFileNone(self):
+        Square.save_to_file(None)
+        with open ("Square.json", 'r') as f:
+            reading = f.read()
+        self.assertEqual(reading, '[]')
+
+    def testSquareSaveToFileEmpty(self):
+        Square.save_to_file([])
+        with open ("Square.json", 'r') as f:
+            reading = f.read()
+        self.assertEqual(reading, '[]')
+
 if __name__ == '__main__':
     unittest.main()
