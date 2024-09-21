@@ -39,32 +39,22 @@ class Base:
         return json.loads(json_string)
 
     def create(cls, **dictionary):
-        """creates new class instances from list of dictionaries"""
-        Rectangle = __import__('rectangle').Rectangle
-        Square = __import__('square').Square
-        if isinstance(cls, Rectangle):
-            new_rectangle = Rectangle(5, 6)
-            new_rectangle.update(dictionary)
-            return new_rectangle
-        else:
-            new_square = Square(5)
-            new_square.update(dictionary)
-            return new_square
+        """creates new class instance from **dictionary"""
+        new_object = cls(1, 2)
+        new_object.update(**dictionary)
+        return new_object
 
     def load_from_file(cls):
-        """loads a class instance from a file"""
-        Rectangle = __import__('rectangle').Rectangle
+        """returns a list of instances from a file"""
         if cls is None:
             return []
         list_objs = []
-        if isinstance(cls, Rectangle):
-            with open('Rectangle.json', 'r') as f:
+        filename = cls.__name__ + '.json'
+        try:
+            with open(filename, 'r') as f:
                 loads = json.loads(f.read())
                 for dict in loads:
-                    list_objs.append(dict)
-        else:
-            with open('Square.json', 'r') as f:
-                loads = json.loads(f.read())
-                for dict in loads:
-                    list_objs.append(dict)
+                    list_objs.append(cls.create(**dict))
+        except FileNotFoundError:
+            return []
         return list_objs

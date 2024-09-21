@@ -54,8 +54,20 @@ class TestAlmostACircle(unittest.TestCase):
     def testRectangleHeightString(self):
         self.assertRaises(TypeError, Rectangle, 2, '3', 0, 5)
 
-    def testRectangleWidthNegative(self):
+    def testRectangleHeightNegative(self):
         self.assertRaises(ValueError, Rectangle, 2, -3, 0, 5)
+
+    def testRectangleXString(self):
+        self.assertRaises(TypeError, Rectangle, 2, 3, "4")
+
+    def testRectangleYString(self):
+        self.assertRaises(TypeError, Rectangle, 2, 3, 4, "5")
+
+    def testRectangleHeightZero(self):
+        self.assertRaises(ValueError, Rectangle, 2, 0, 0, 5)
+
+    def testRectangleWidthZero(self):
+        self.assertRaises(ValueError, Rectangle, 0, 3, 0, 5)
 
     def testRectangleWidthSetter(self):
         test_rect = Rectangle(2, 3)
@@ -109,6 +121,11 @@ class TestAlmostACircle(unittest.TestCase):
     def testRectangleToDictionary(self):
         actual_result = Rectangle(1, 2).to_dictionary()
         expected_result = {'x':0,'y':0,'id':1,'height':2,'width':1}
+        self.assertEqual(actual_result, expected_result)
+
+    def testRectangleStr(self):
+        actual_result = Rectangle(1, 2).__str__()
+        expected_result = '[Rectangle] (1) 0/0 - 1/2'
         self.assertEqual(actual_result, expected_result)
 
     # SQUARE SECTION
