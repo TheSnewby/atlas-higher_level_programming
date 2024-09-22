@@ -222,6 +222,14 @@ class TestAlmostACircle(unittest.TestCase):
         expected_result = '##\n##\n'
         self.assertEqual(capture.getvalue(), expected_result)
 
+    def testRectangleDisplayXY(self):
+        rect = Rectangle(2, 2, 1, 1)
+        capture = io.StringIO()
+        sys.stdout = capture
+        rect.display()
+        expected_result = '\n ##\n ##\n'
+        self.assertEqual(capture.getvalue(), expected_result)
+
     def testRectangleToDictionary(self):
         actual_result = Rectangle(1, 2).to_dictionary()
         expected_result = {'x':0,'y':0,'id':1,'height':2,'width':1}
