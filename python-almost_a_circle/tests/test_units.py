@@ -103,6 +103,17 @@ class TestAlmostACircle(unittest.TestCase):
         list_obj = Rectangle.load_from_file()
         self.assertEqual(list_obj, [])
 
+    def testSquareLoadFromFile(self):
+        obj1 = Square(1, 2)
+        obj2 = Square(3, 4)
+        Square.save_to_file([obj1, obj2])
+        list_obj = Square.load_from_file()
+        self.assertIsInstance(list_obj[1], Square)
+
+    def testSquareLoadFromFileDoesNotExist(self):
+        list_obj = Square.load_from_file()
+        self.assertEqual(list_obj, [])
+
     # RECTANGLE SECTION
     def testRectangleWidth(self):
         actual_result = Rectangle(2, 3).width

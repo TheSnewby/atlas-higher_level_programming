@@ -32,7 +32,7 @@ class Base:
                 if obj is not None:
                     list_dicts.append(obj.to_dictionary())
         with open(filename, 'w') as f:
-            f.write(Base.to_json_string(list_dicts)) #consider converting to dictionaries prior
+            f.write(Base.to_json_string(list_dicts))
 
     def from_json_string(json_string):
         """unpacks a list of dictionaries from a json string"""
@@ -43,7 +43,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """creates new class instance from **dictionary"""
-        new_object = cls(1, 2)
+        if cls.__name__ == 'Rectangle':
+            new_object = cls(1, 2)
+        elif cls.__name__ == 'Square':
+            new_object = cls(1)
         new_object.update(**dictionary)
         return new_object
 

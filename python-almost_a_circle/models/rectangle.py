@@ -95,7 +95,7 @@ class Rectangle(Base):
             for j in range(self.__width + self.__x):
                 if j >= self.__x and i >= self.__y:
                     print('#', end='')
-                elif j < self.__x:
+                elif j < self.__x and i >= self.__y:
                     print(' ', end='')
             print()
 
