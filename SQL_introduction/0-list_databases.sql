@@ -1,1 +1,2 @@
-SELECT name FROM master.sys.databases
+-- lists all databases of MySQL server
+SHOW databases;
