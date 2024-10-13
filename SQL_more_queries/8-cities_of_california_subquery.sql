@@ -4,4 +4,4 @@
 -- Results must be sorted in ascending order by cities.id
 -- You are not allowed to use the JOIN keyword
 -- The database name will be passed as an argument of the mysql command
-SHOW cities IN hbtn_0d_usa WHERE cities.name = 'California' ORDER BY cities DESC;
+SHOW id, name IN hbtn_0d_usa.cities WHERE hbtn_0d_usa.cities.name = 'California' ORDER BY hbtn_0d_usa.cities.id ASC;
