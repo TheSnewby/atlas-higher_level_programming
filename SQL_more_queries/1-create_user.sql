@@ -6,7 +6,7 @@ BEGIN
     SELECT COUNT(*) INTO existence FROM mysql.user WHERE user = 'user_0d_1' and host = 'localhost';
     IF existence = 0 THEN
         CREATE USER 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
-        GRANT ALL PRIVILEGES on *.* TO 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+        GRANT ALL PRIVILEGES on *.* TO 'user_0d_1'@'localhost';
     END IF;
 END //
 DELIMITER ;
