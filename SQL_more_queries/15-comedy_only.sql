@@ -7,7 +7,7 @@
 -- Results must be sorted in ascending order by the show title
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command
-SELECT title FROM tv_shows.title
+SELECT tv_shows.title FROM tv_shows
 INNER JOIN tv_show_genres ON tv-shows.id = tv_show_genres.show_id
 INNER JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
 ORDER BY tv_shows.title ASC;
