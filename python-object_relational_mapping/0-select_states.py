@@ -12,6 +12,9 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT states.id FROM {} ORDER BY states.id ASC".format(db))
+    cur.execute("SELECT id FROM {} ORDER BY id ASC".format(db))
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
