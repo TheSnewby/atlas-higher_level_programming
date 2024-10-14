@@ -13,6 +13,7 @@ Your code should not be executed when imported"""
 
 
 if __name__ == "__main__":
+    """Lists all states from the database."""
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=sys.argv[1],
