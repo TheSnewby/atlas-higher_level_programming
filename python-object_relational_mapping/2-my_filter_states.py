@@ -15,7 +15,9 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     cur = db.cursor()
     target = sys.argv[4]
-    cur.execute("SELECT id, name FROM states WHERE name = {} \
+    cur.execute("SELECT id, name \
+                FROM states \
+                WHERE name = '{}' \
                 ORDER BY id ASC".format(target))
     # above line can also be have:  WHERE name LIKE 'N%'
     rows = cur.fetchall()
