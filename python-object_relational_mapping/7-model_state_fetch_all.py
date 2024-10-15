@@ -10,6 +10,7 @@ from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
+
 if __name__ == "__main__":
     """main function"""
     mysql_username = sys.argv[1]
@@ -20,10 +21,12 @@ if __name__ == "__main__":
                                                         mysql_password,
                                                         mysql_database)
     engine = create_engine(url)
+    Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
     session = Sesh()
     try:
-        query_result = session.execute("SELECT * FROM states").fetchall()
+        query_result = session.execute("SELECT * FROM states ORDER BY \
+                                       states.id ASC").fetchall()
         for row in query_result:
             print(row)
     finally:
