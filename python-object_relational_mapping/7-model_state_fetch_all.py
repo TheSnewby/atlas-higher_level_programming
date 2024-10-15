@@ -6,7 +6,7 @@ import MySQLdb
 import sqlalchemy
 import sys
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String, create_engine, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
@@ -19,11 +19,11 @@ if __name__ == "__main__":
                                                         mysql_password,
                                                         mysql_database)
     engine = create_engine(url)
+    Sesh = sessionmaker(bind=engine)
+    session = Sesh()
     try:
-        connection = engine.connect()
-        query_result = connection.execute("SELECT * FROM states")
-        rows = query_result.fetchall()
-        for row in rows:
+        query_result = session.execute("SELECT * FROM states").fetchall()
+        for row in query_result:
             print(row)
     finally:
-        connection.close()
+        session.close()
