@@ -5,9 +5,10 @@ from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
 
-
 Base = declarative_base()
-engine = create_engine()
+url = 'mysql+pymysql://root:root@localhost:3306/states'
+engine = create_engine(url)
+
 class State(Base):
     """State Class inherits from Base"""
     __tablename__ = 'state'
