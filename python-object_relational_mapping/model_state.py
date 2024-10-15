@@ -8,8 +8,8 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 Base = declarative_base()
-url = 'mysql+mysqldb://root:root@localhost:3306/states'
-engine = create_engine(url)
+# url = 'mysql+mysqldb://root:root@localhost:3306/states'
+# engine = create_engine(url)
 
 
 class State(Base):
@@ -22,7 +22,7 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
 
 # if __name__ == "__main__":
 #     pass
