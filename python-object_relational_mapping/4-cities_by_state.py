@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cur.execute("SELECT cities.id, cities.name, states.name \
                 FROM cities, \
                 INNER JOIN cities.state_id = states.id \
-                ORDER BY id ASC")
+                ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
