@@ -18,8 +18,8 @@ if __name__ == "__main__":
     mysql_database = sys.argv[3]
 
     url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(mysql_username,
-                                                        mysql_password,
-                                                        mysql_database)
+                                                           mysql_password,
+                                                           mysql_database)
     engine = create_engine(url)
     Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
