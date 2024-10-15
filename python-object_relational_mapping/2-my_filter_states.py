@@ -17,9 +17,8 @@ if __name__ == "__main__":
     target = sys.argv[4]
     cur.execute("SELECT id, name \
                 FROM states \
-                WHERE name = '{}' \
+                WHERE BINARY name = '{}' \
                 ORDER BY id ASC".format(target))
-    # above line can also be have:  WHERE name LIKE 'N%'
     rows = cur.fetchall()
     for row in rows:
         print(row)
