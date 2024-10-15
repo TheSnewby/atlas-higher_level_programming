@@ -20,7 +20,12 @@ if __name__ == "__main__":
                 WHERE states.name = %s \
                 ORDER BY cities.id ASC", (target,))
     rows = cur.fetchall()
+    city_count = 0
     for row in rows:
-        print(row)
+        if city_count == 0:
+            print(row, end='')
+        else:
+            print(', {}'.format(row))
+    print()
     cur.close()
     db.close()
