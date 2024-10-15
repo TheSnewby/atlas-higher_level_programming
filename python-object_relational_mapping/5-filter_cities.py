@@ -26,7 +26,7 @@ if __name__ == "__main__":
             print(row[0], end='')
             city_count += 1
         else:
-            print(', {}'.format(row[0]))
+            print(', {}'.format(row[0]), end='')
     print()
     cur.close()
     db.close()
