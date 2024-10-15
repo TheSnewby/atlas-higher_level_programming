@@ -24,6 +24,7 @@ if __name__ == "__main__":
     for row in rows:
         if city_count == 0:
             print(row[0], end='')
+            city_count += 1
         else:
             print(', {}'.format(row[0]))
     print()
