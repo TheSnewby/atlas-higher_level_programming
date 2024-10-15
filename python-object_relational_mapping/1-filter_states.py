@@ -15,6 +15,7 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states ORDER BY id ASC")
+    # above line can also be have:  WHERE name LIKE 'N%'
     rows = cur.fetchall()
     for row in rows:
         if re.search('^N', row[1]):  # checks if second word beings with N
