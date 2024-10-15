@@ -6,7 +6,8 @@ import MySQLdb
 import sqlalchemy
 import sys
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String, create_engine, sessionmaker
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
