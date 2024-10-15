@@ -6,8 +6,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 Base = declarative_base()
-url = 'mysql+pymysql://root:root@localhost:3306/states'
+url = 'mysql+mysqldb://root:root@localhost:3306/states'
 engine = create_engine(url)
+
 
 class State(Base):
     """State Class inherits from Base"""
@@ -15,6 +16,7 @@ class State(Base):
     id = Column(Integer, primary_key=True, auto_generate=True, nullable=False,
                 unique=True)
     name = Column(String(128))
+
 
 Base.metadata.create_all(engine)
 
