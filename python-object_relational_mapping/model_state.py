@@ -12,10 +12,10 @@ engine = create_engine(url)
 
 class State(Base):
     """State Class inherits from Base"""
-    __tablename__ = 'state'
-    id = Column(Integer, primary_key=True, auto_generate=True, nullable=False,
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False,
                 unique=True)
-    name = Column(String(128))
+    name = Column(String(128), nullable=False)
 
 
 Base.metadata.create_all(engine)
