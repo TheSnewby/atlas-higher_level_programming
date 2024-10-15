@@ -24,10 +24,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
     session = Sesh()
-    try:
-        query_result = session.execute("SELECT * FROM states ORDER BY \
-                                       states.id ASC").fetchall()
-        for row in query_result:
-            print(row)
-    finally:
-        session.close()
+    states = session.query(State).all()
+
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+    session.close()
