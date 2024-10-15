@@ -23,9 +23,9 @@ if __name__ == "__main__":
     city_count = 0
     for row in rows:
         if city_count == 0:
-            print(row, end='')
+            print(row[0], end='')
         else:
-            print(', {}'.format(row))
+            print(', {}'.format(row[0]))
     print()
     cur.close()
     db.close()
