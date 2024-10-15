@@ -17,7 +17,7 @@ if __name__ == "__main__":
     cur.execute("SELECT id, name FROM states ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
-        if re.search('d N*'):
+        if re.search('d N*', row):
             print(row)
     cur.close()
     db.close()
