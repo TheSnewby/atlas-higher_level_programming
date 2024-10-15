@@ -11,8 +11,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 if __name__ == "__main__":
     """main function"""
-
-
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_database = sys.argv[3]
@@ -21,8 +19,11 @@ if __name__ == "__main__":
                                                         mysql_password,
                                                         mysql_database)
     engine = create_engine(url)
-    connection = engine.connect()
-    query_result = connection.execute("SELECT * FROM states")
-    rows = query_result.fetchall()
-    for row in rows:
-        print(row)
+    try:
+        connection = engine.connect()
+        query_result = connection.execute("SELECT * FROM states")
+        rows = query_result.fetchall()
+        for row in rows:
+            print(row)
+    finally:
+        connection.close()
