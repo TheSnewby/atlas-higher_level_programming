@@ -25,6 +25,8 @@ if __name__ == "__main__":
     session = Sesh()
     states = session.query(State).order_by(State.id).first()
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    if states:
+        print("{}: {}".format(states.id, states.name))
+    else:
+        print("Nothing")
     session.close()
