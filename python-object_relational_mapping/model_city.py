@@ -13,10 +13,10 @@ Base = declarative_base()
 
 class City(Base):
     """
-    State Class inherits from Base
+    City Class inherits from Base
     """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False,
                 unique=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullabe=False, foreign_key=State.id)
+    state_id = Column(Integer, nullable=False, foreign_key=State.id)
