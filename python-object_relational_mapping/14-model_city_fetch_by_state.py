@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Sesh()
     cities = session.query(City).order_by(City.id).all()
     for city in cities:
-        print('{}: ({}) ({})'.format(
+        print('{}: ({}) {}'.format(
             session.query(State).filter_by(id=city.state_id).first().name,
             city.id,
             city.name
