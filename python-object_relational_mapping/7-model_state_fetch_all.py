@@ -24,8 +24,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
     session = Sesh()
-    states = session.query(State).all()
+    states = session.query(State).order_by(State.id).all()
 
     for state in states:
-        print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(states.id, states.name))
     session.close()
