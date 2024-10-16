@@ -23,8 +23,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
     session = Sesh()
-    state = session.query(State).filter(id = 2).first()
-    state.name = 'New Mexico'
+    state = session.query(State).filter_by(id = 2).first()
+    if state:
+        state.name = 'New Mexico'
     session.commit()
 
     session.close()
