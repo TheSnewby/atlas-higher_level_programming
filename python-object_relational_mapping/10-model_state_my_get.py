@@ -24,11 +24,11 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Sesh = sessionmaker(bind=engine)
     session = Sesh()
-    states = session.query(State).filter(
-            State.name == '{}'.format(mysql_target)).order_by(State.id).all()
+    state = session.query(State).filter(
+            State.name == '{}'.format(mysql_target)).first()
 
-    if states:
-        print("{}".format(states.id))
+    if state:
+        print("{}".format(state.id))
     else:
         print("Not found")
     session.close()
