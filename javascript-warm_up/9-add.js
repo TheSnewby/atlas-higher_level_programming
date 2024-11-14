@@ -6,7 +6,7 @@ function add (a, b) {
   if (isNaN(Number(a)) || isNaN(Number(b))) {
     console.log('NaN');
   } else {
-    console.log(`${a + b}`);
+    console.log(`${Number(a) + Number(b)}`);
   }
 }
 
