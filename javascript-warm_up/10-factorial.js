@@ -10,7 +10,7 @@ function factorial (num) {
 }
 
 if (argv[2] === undefined) {
-    console.log(factorial(1));
-} else{
-    console.log(factorial(argv[2]));
+  console.log(factorial(1));
+} else {
+  console.log(factorial(argv[2]));
 }
