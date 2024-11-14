@@ -9,4 +9,8 @@ function factorial (num) {
   return factorial(num - 1) * num;
 }
 
-console.log(factorial(argv[2]));
+if (argv[2] === undefined) {
+    console.log(factorial(1));
+} else{
+    console.log(factorial(argv[2]));
+}
