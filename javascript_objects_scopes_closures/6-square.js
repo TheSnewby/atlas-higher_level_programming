@@ -7,8 +7,8 @@ module.exports = class Square extends fiveSquare {
   }
 
   charPrint (c) {
-    for (let i = 0; i < self.size; i++) {
-      for (let j = 0; j < self.size; j++) {
+    for (let i = 0; i < this.size; i++) {
+      for (let j = 0; j < this.size; j++) {
         if (c === undefined) {
           process.stdout.write('X');
         } else {
