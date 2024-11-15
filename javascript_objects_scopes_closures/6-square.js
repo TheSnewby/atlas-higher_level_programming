@@ -6,10 +6,14 @@ module.exports = class Square extends fiveSquare {
     super(size);
   }
 
-  charPrint () {
+  charPrint (c) {
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
-        process.stdout.write('c');
+        if (c === undefined) {
+          process.stdout.write('X');
+        } else {
+          process.stdout.write(c);
+        }
       }
       console.log();
     }
