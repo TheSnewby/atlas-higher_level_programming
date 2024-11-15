@@ -1,7 +1,9 @@
 #!/usr/bin/node
 
-class Rectangle {
-  constructor() {
-    
-  }
+export class Rectangle {
+
 }
+
+// const r1 = new Rectangle();
+// console.log(r1);
+// console.log(r1.constructor);
