@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const { argv } = require('process'); 
+const { argv } = require('process');
 
 const url = argv[2];
 let count = 0;
