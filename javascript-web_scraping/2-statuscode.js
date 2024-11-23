@@ -5,6 +5,6 @@ const request = require('request');
 
 request(argv[2], (error, response, body) => {
   if (!error && response.statusCode === 200) {
-    console.log(`code:  ${response.statusCode}`);
+    console.log(`code: ${response.statusCode}`);
   }
 });
