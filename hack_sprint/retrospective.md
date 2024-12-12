@@ -13,13 +13,13 @@ Oregon Trail 3000 is set in futuristic Mars where a family is migrating to New O
 Oregon Trail 3000 was written in Python with the PyGame module and hosted through github. DALL-E was used for image generation.
 
 ## Demo
-The Main Menu
+#### The Main Menu
 ![Main Menu](image.png)
-The Mood-Setting Intro
+#### The Mood-Setting Intro
 ![Intro](image-1.png)
-A DOOM Encounter
+#### A DOOM Encounter
 ![DOOM Encounter](image-2.png)
-A Mars Landscape Encounter
+#### A Mars Landscape Encounter
 ![Landscape Encounter](image-3.png)
 
 ## Challenges
